@@ -5,7 +5,7 @@ import { ArrowLeft, MapPin, Save, UserRound } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-const initialAddress = { fullName: '', mobile: '', addressLine: '', city: '', state: '', postalCode: '', country: 'India' };
+const initialAddress = { fullName: '', mobile: '', addressLine: '', city: '', state: '', postalCode: '', country: 'United Kingdom' };
 
 export default function NewCustomerPage() {
   const router = useRouter();

@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seed:mock": "node scripts/seed-mock-data.mjs"
   },
   "dependencies": {
+    "jspdf": "^4.2.1",
     "lucide-react": "^1.48.0",
     "mongoose": "^8.24.4",
     "next": "16.3.6",

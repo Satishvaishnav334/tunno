@@ -8,7 +8,7 @@ const AddressSchema = new Schema(
 		city: { type: String, required: true, trim: true },
 		state: { type: String, required: true, trim: true },
 		postalCode: { type: String, required: true, trim: true },
-		country: { type: String, required: true, default: "India", trim: true },
+		country: { type: String, required: true, default: "United Kingdom", trim: true },
 	},
 	{ _id: false }
 );
@@ -60,7 +60,7 @@ const InvoiceSchema = new Schema(
 		taxTotal: { type: Number, required: true, min: 0, default: 0 },
 		discount: { type: Number, min: 0, default: 0 },
 		total: { type: Number, required: true, min: 0 },
-		currency: { type: String, required: true, default: "INR", uppercase: true },
+		currency: { type: String, required: true, default: "GBP", uppercase: true },
 		issueDate: { type: Date, required: true, default: Date.now },
 		dueDate: { type: Date, required: true },
 		status: {

@@ -7,7 +7,7 @@ const AddressSchema = new Schema({
   city: { type: String, required: true },
   state: { type: String, required: true },
   postalCode: { type: String, required: true },
-  country: { type: String, default: "India" },
+  country: { type: String, default: "United Kingdom" },
 }, { _id: false });
 
 const ItemPriceSchema = new Schema({

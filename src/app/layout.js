@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "InvoicFlow | Billing workspace",
-  description: "Create, manage, and track customer invoices and pricing.",
+  title: "ParcelFlow | UK delivery billing",
+  description: "Manage UK parcel delivery services, customer rates, and invoices.",
 };
 
 export default function RootLayout({ children }) {

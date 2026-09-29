@@ -20,7 +20,7 @@ export async function POST(request) {
     try {
         await connectToDatabase();
         const body = await request.json();
-        const { user, invoiceNumber, dueDate, status = 'draft', currency = 'INR', paymentMethod, notes, items = [] } = body;
+        const { user, invoiceNumber, dueDate, status = 'draft', currency = 'GBP', paymentMethod, notes, items = [] } = body;
 
         if (!user || !invoiceNumber || !dueDate || !items.length) {
             return NextResponse.json({ error: 'Customer, invoice number, due date, and at least one item are required' }, { status: 400 });
@@ -36,7 +36,7 @@ export async function POST(request) {
         }
         const catalogItems = await Items.find({ _id: { $in: itemIds }, isActive: true }).lean();
         if (catalogItems.length !== itemIds.length) {
-            return NextResponse.json({ error: 'Every invoice item must be an active catalog item' }, { status: 400 });
+            return NextResponse.json({ error: 'Every invoice service must be active' }, { status: 400 });
         }
 
         const savedPrices = new Map((customer.itemPrices || []).map((entry) => [String(entry.item), Number(entry.price)]));
