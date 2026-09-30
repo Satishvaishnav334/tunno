@@ -177,4 +177,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 760px) { .login-layout { grid-template-columns: 1fr; gap: 28px; max-width: 470px; } .login-intro { padding: 0; } .login-intro .login-kicker { margin-top: 25px; } .login-intro h1 { max-width: 420px; font-size: clamp(40px, 12vw, 58px); } .login-description { font-size: 13px; } .login-points { grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 25px; } .login-points > span { align-items: flex-start; font-size: 10px; } .point-number { width: 23px; height: 23px; } .login-card { padding: 25px 21px; } }
 @media (max-width: 430px) { .login-canvas { padding: 22px 15px; } .login-points { grid-template-columns: 1fr; } .login-intro h1 { font-size: 45px; } }
 
+.mobile-menu-toggle, .mobile-menu-close, .mobile-menu-backdrop { display: none; }
+
+@media (max-width: 700px) {
+  .mobile-menu-toggle { position: fixed; top: 13px; right: 15px; z-index: 30; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); box-shadow: 0 8px 20px rgba(22,51,47,.12); cursor: pointer; }
+  .mobile-menu-backdrop { position: fixed; inset: 0; z-index: 19; display: block; border: 0; background: rgba(22,51,47,.42); cursor: pointer; }
+  .workspace-sidebar { position: fixed; inset: 0 auto 0 0; z-index: 20; display: flex; width: min(82vw, 300px); min-height: 100vh; padding: 24px 18px 18px; transform: translateX(-105%); transition: transform .2s ease; box-shadow: 12px 0 35px rgba(22,51,47,.18); }
+  .workspace-sidebar.mobile-menu-open { transform: translateX(0); }
+  .workspace-sidebar .brand-lockup { justify-content: flex-start; padding: 0 0 38px; }
+  .workspace-sidebar .brand-lockup > span:last-of-type, .workspace-sidebar .sidebar-label, .workspace-sidebar .sidebar-bottom, .workspace-sidebar .sidebar-footer { display: block; }
+  .workspace-sidebar .sidebar-nav { display: grid; gap: 4px; overflow: visible; }
+  .workspace-sidebar .sidebar-nav button, .workspace-sidebar .sidebar-nav button.active { justify-content: flex-start; gap: 11px; padding: 11px 12px; font-size: 13px; }
+  .workspace-sidebar .sidebar-nav button.active::after { content: none; }
+  .workspace-sidebar .nav-count { display: inline; }
+  .mobile-menu-close { display: grid; place-items: center; margin-left: auto; padding: 7px; border: 0; background: transparent; color: rgba(255,255,255,.7); cursor: pointer; }
+  .workspace-main { padding-top: 74px; }
+}
+
 @media print { body { background: #fff; } button, select, input, aside, nav { display: none !important; } .invoice-document, article { border: 0 !important; box-shadow: none !important; } }
