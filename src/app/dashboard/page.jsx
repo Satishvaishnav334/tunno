@@ -24,9 +24,9 @@ import { useRouter } from "next/navigation";
 
 const NAV = [
   ["overview", "Overview", BarChart3],
-  ["invoices", "Invoices", FileText],
+  ["invoice", "Invoices", FileText],
   ["clients", "Customers", Users],
-  ["catalog", "Services", Package],
+  ["items", "Services", Package],
 ];
 const STATUSES = ["all", "paid", "sent", "overdue", "draft", "cancelled"];
 const money = (value, currency = "GBP") =>
@@ -226,15 +226,27 @@ export default function DashboardPage() {
           </nav>
           <div className="sidebar-bottom">
             <div className="sidebar-label">Shortcuts</div>
-            <Link href="/dashboard/invoice" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/dashboard/invoice"
+              className="flex items-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <Plus className="h-4 w-4" />
               New invoice
             </Link>
-            <Link href="/dashboard/clients" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/dashboard/clients"
+              className="flex items-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <Users className="h-4 w-4" />
               New customer
             </Link>
-            <Link href="/dashboard/items" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/dashboard/items"
+              className="flex items-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <Package className="h-4 w-4" />
               New delivery service
             </Link>
@@ -267,9 +279,12 @@ export default function DashboardPage() {
                   placeholder="Search workspace"
                 />
               </div>
-              <Link href="/dashboard/invoice" className="primary-action">
+              <Link
+                href={`/dashboard/${view}`}
+                className="primary-action"
+              >
                 <Plus className="h-4 w-4" />
-                Create invoice
+                Create {view}
               </Link>
             </div>
           </header>
@@ -292,7 +307,10 @@ export default function DashboardPage() {
             />
           )}
           {view === "clients" && (
-            <Customers users={filteredUsers} router={router} />
+            <Customers
+              users={filteredUsers}
+              router={router}
+            />
           )}
           {view === "catalog" && <Services services={filteredServices} />}
         </main>

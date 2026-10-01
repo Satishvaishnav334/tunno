@@ -233,7 +233,7 @@ export default function InvoicePage() {
             {error}
           </p>
         )}
-        <article className="invoice-document mt-7 border border-slate-300 bg-white p-6 shadow-sm sm:p-10">
+        <article className="invoice-document mt-7 border border-slate-300 bg-white rounded-md p-6 shadow-sm sm:p-10">
           <div className="flex flex-col gap-6 border-b-2 border-slate-900 pb-7 sm:flex-row sm:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-teal-700">
