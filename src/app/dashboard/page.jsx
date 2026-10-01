@@ -499,19 +499,7 @@ function RevenueChart({ invoices }) {
 function Invoices({ invoices, status, setStatus, router }) {
   return (
     <section className="page-section">
-      <div className="section-toolbar">
-        <div>
-          <p className="eyebrow">Billing register</p>
-          <h2>Invoices</h2>
-          <p className="section-note">
-            Track every delivery charge from draft to paid.
-          </p>
-        </div>
-        <Link href="/dashboard/invoice" className="primary-action">
-          <Plus className="h-4 w-4" />
-          New invoice
-        </Link>
-      </div>
+
       <div className="filter-row">
         {STATUSES.map((option) => (
           <button
@@ -533,19 +521,6 @@ function Invoices({ invoices, status, setStatus, router }) {
 function Customers({ users, router }) {
   return (
     <section className="page-section">
-      <div className="section-toolbar">
-        <div>
-          <p className="eyebrow">Relationships</p>
-          <h2>Customers</h2>
-          <p className="section-note">
-            Profiles, service rates, and delivery billing history.
-          </p>
-        </div>
-        <Link href="/dashboard/clients" className="primary-action">
-          <Plus className="h-4 w-4" />
-          New customer
-        </Link>
-      </div>
       <div className="customer-grid">
         {users.map((user) => (
           <button
@@ -581,19 +556,7 @@ function Customers({ users, router }) {
 function Services({ services }) {
   return (
     <section className="page-section">
-      <div className="section-toolbar">
-        <div>
-          <p className="eyebrow">Delivery pricebook</p>
-          <h2>Services</h2>
-          <p className="section-note">
-            Standard UK parcel delivery charges and VAT rates.
-          </p>
-        </div>
-        <Link href="/dashboard/items" className="primary-action">
-          <Plus className="h-4 w-4" />
-          New service
-        </Link>
-      </div>
+      
       <div className="catalog-grid">
         {services.map((service) => (
           <article key={service._id} className="catalog-card">
